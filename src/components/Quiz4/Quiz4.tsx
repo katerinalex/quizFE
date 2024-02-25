@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../Header/index.tsx';
+import { DataContextType, DataContext } from '../../DataContext.tsx';
+import classNames from 'classnames';
 
 export const Quiz4:React.FC = () => {
-  const handleClick = (e: React. MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
+  const [hates, setHates] = useState<string[]>([]);
+  const handleClick = (hate: string) => {
+    if (hates.includes(hate)) {
+      setHates(prev => prev.filter(el => el.localeCompare(hate) === 0));
+    } else {
+      setHates(prev => [...prev, hate]);
+    }
+  };
+
+  const { data, setData } = useContext<DataContextType>(DataContext);
+  const handleNextClick = () => {
+    setData([...data, {
+      order: 4,
+      title: 'What do you hate the most in a book?',
+      type: 'multiple-select',
+      answer: hates.join(', '),
+    }]);
   };
 
   return (
@@ -16,43 +33,83 @@ export const Quiz4:React.FC = () => {
         <Link
           className='page__options__item page__options__item--multiple-select page__options__item--choosen'
           to={`../${5}`}
-          onClick={handleClick}
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick('Lack of logic')
+          }}
         >
           <span>Lack of logic</span>
-          <div className="checkbox checkbox--choosen"></div>
+          <div 
+            className={classNames(
+              'checkbox',
+              {'checkbox--choosen': hates.includes('Lack of logic')}
+            )}
+          >
+          </div>
         </Link>
 
         <Link
           className='page__options__item page__options__item--multiple-select'
           to={`../${5}`}
-          onClick={handleClick}
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick('A slow speed')
+          }}
         >
           <span>A slow speed</span>
-          <div className="checkbox"></div>
+          <div 
+            className={classNames(
+              'checkbox',
+              {'checkbox--choosen': hates.includes('A slow speed')}
+            )}
+          >
+          </div>
         </Link>
 
         <Link
           className='page__options__item page__options__item--multiple-select'
           to={`../${5}`}
-          onClick={handleClick}
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick('Lack of humor')
+          }}
         >
           <span>Lack of humor</span>
-          <div className="checkbox"></div>
+          <div 
+            className={classNames(
+              'checkbox',
+              {'checkbox--choosen': hates.includes('Lack of humor')}
+            )}
+          >
+          </div>
         </Link>
 
         <Link
           className='page__options__item page__options__item--multiple-select'
           to={`../${5}`}
-          onClick={handleClick}
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick('Way too generic ending')
+          }}
         >
           <span>Way too generic ending</span>
-          <div className="checkbox"></div>
+          <div 
+            className={classNames(
+              'checkbox',
+              {'checkbox--choosen': hates.includes('Way too generic ending')}
+            )}
+          >
+          </div>
         </Link>
       </div>
 
       <Link
-        className='page__button page__button--disabled'
+        className={classNames(
+          'page__button',
+          {'page__button--disabled': hates.length === 0}
+        )}
         to={`../${5}`}
+        onClick={handleNextClick}
       >
         Next
       </Link>

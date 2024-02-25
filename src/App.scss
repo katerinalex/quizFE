@@ -21,6 +21,16 @@
     &--strong {
       color: #E4229B;
     }
+
+    &--res {
+      font-family: "Niconne", cursive;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 44px;
+      letter-spacing: 0em;
+      text-align: center;
+
+    }
   }
 
   &__sub-title {
@@ -33,9 +43,19 @@
     color: #C4C8CC;
 
     margin-top: 10px;
+
+    &--res {
+      font-family: "Albert Sans", sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
   }
 
   &__email {
+    box-sizing: border-box;
     text-decoration: none;
     padding: 20px 40px;
     background-color: #36173D;
@@ -50,7 +70,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: #FFFFFF;
-    outline: green solid 0px;
+    outline: solid 0px;
 
     &:focus, &:autofill {
       padding: 20px 40px;
@@ -64,7 +84,7 @@
       display: none;
     }
 
-    &:invalid + .page__button {
+    &:invalid ~ .page__button {
       opacity: 0.4;
       pointer-events: none;
     }
@@ -198,5 +218,34 @@
       opacity: 0.4;
       pointer-events: none;
     }
+  }
+
+  &--res {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.download {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  text-decoration-color: #ECECFB;
+
+  &__text {
+    font-family: "Albert Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #ECECFB;
+    text-decoration-color: #ECECFB;
   }
 }
