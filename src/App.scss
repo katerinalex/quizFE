@@ -35,6 +35,41 @@
     margin-top: 10px;
   }
 
+  &__email {
+    text-decoration: none;
+    padding: 20px 40px;
+    background-color: #36173D;
+    border-radius: 16px;
+    box-shadow: none;
+    border-width: 0;
+    
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    outline: green solid 0px;
+
+    &:focus, &:autofill {
+      padding: 20px 40px;
+      background-color: #36173D;
+      box-shadow: none;
+      border-width: 2px;
+      border-color: #E4229C;
+    }
+
+    &:valid + .warning {
+      display: none;
+    }
+
+    &:invalid + .page__button {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  }
+
   &__options {
     display: flex;
     justify-content: space-around;

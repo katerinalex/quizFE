@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Todo } from './types/Todo';
+import { Data } from './types/Data';
 
-export const useLocalStorage = (
+export const useLocalDataStorage = (
   key:string,
-  defaultValue:Todo[],
+  defaultValue:Data[],
 ) => {
   const [value, setValue] = useState(() => {
     let currentValue;

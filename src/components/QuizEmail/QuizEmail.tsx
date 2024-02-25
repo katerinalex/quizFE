@@ -14,9 +14,17 @@ export const QuizEmail:React.FC = () => {
         <div className="page">
           <h1 className="page__title">Email</h1>
           <h2 className="page__sub-title">Enter your email to get full access</h2>
-          <input type="email" name="email" id="email" />
+          <input 
+            className="page__email" 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Your email"
+          />
           <p className="warning">Invalid email</p>
-          <p className="agreement">By continuing I agree with Privacy policy and Terms of use.</p>
+          <p className="agreement">
+            By continuing I agree with <span className="page__title--strong">Privacy policy</span> and <span className="page__title--strong">Terms of use</span>.
+          </p>
           <Link
             className='page__button page__button--disabled'
             to={`../result`}
