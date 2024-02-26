@@ -28,9 +28,9 @@ export const App = () => {
             <Route path="4" element={<Quiz4 />} />
             <Route path="5" element={<Quiz5 />} />
             <Route path="loading" element={<QuizLoading />} />
-            <Route path="email" element={<QuizEmail />} />
-            <Route path="result" element={<QuizResult />} />
           </Route>
+          <Route path="email" element={<QuizEmail />} />
+          <Route path="result" element={<QuizResult />} />
           <Route
             path="/"
             element={<Navigate to="quiz/1" replace />}

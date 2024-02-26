@@ -47,7 +47,7 @@ export const QuizEmail:React.FC = () => {
               'page__button',
               {'page__button--disabled': email.length === 0}
             )}
-            to={`../result`}
+            to={`../../result`}
             onClick={handleNextClick}
           >
             Next

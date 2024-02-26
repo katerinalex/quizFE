@@ -6,7 +6,7 @@ export type LangContextType = {
   setData: Dispatch<SetStateAction<Lang []>>,
 };
 
-export const DataContext = createContext<LangContextType>({
+export const LangContext = createContext<LangContextType>({
   data: [],
   setData: () => {},
 });

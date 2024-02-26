@@ -8,7 +8,7 @@ export const Quiz4:React.FC = () => {
   const [hates, setHates] = useState<string[]>([]);
   const handleClick = (hate: string) => {
     if (hates.includes(hate)) {
-      setHates(prev => prev.filter(el => el.localeCompare(hate) === 0));
+      setHates(prev => prev.filter(el => el.localeCompare(hate) !== 0));
     } else {
       setHates(prev => [...prev, hate]);
     }
@@ -31,7 +31,11 @@ export const Quiz4:React.FC = () => {
 
       <div className="page__options">
         <Link
-          className='page__options__item page__options__item--multiple-select page__options__item--choosen'
+          className={classNames(
+            'page__options__item',
+            'page__options__item--multiple-select',
+            {'page__options__item--choosen': hates.includes('Lack of logic')}
+          )}
           to={`../${5}`}
           onClick={(e) => {
             e.preventDefault();
@@ -49,7 +53,11 @@ export const Quiz4:React.FC = () => {
         </Link>
 
         <Link
-          className='page__options__item page__options__item--multiple-select'
+          className={classNames(
+            'page__options__item',
+            'page__options__item--multiple-select',
+            {'page__options__item--choosen': hates.includes('Lack of logic')}
+          )}
           to={`../${5}`}
           onClick={(e) => {
             e.preventDefault();
@@ -67,7 +75,11 @@ export const Quiz4:React.FC = () => {
         </Link>
 
         <Link
-          className='page__options__item page__options__item--multiple-select'
+          className={classNames(
+            'page__options__item',
+            'page__options__item--multiple-select',
+            {'page__options__item--choosen': hates.includes('Lack of logic')}
+          )}
           to={`../${5}`}
           onClick={(e) => {
             e.preventDefault();
@@ -85,7 +97,11 @@ export const Quiz4:React.FC = () => {
         </Link>
 
         <Link
-          className='page__options__item page__options__item--multiple-select'
+          className={classNames(
+            'page__options__item',
+            'page__options__item--multiple-select',
+            {'page__options__item--choosen': hates.includes('Lack of logic')}
+          )}
           to={`../${5}`}
           onClick={(e) => {
             e.preventDefault();

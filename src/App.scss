@@ -112,17 +112,43 @@
       text-align: left;
       color: #FFFFFF;
 
+      &.grid {
+        @for $start from 1 through 12 {
+          @for $end from 1 through 12 {
+            &__column--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end+1};
+            }
+          }
+        }
+      
+        @for $start from 1 through 7 {
+          @for $end from 1 through 7 {
+            &__row--#{$start}-#{$end} {
+              grid-row: #{$start} / #{$end+1};
+            }
+          }
+        }
+      }
+
       &--bubble {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background: #36173D;
         width: 88px;
         height: 88px;
-        // padding: 18px, 8px, 23px, 8px;
         padding: 0;
         border-radius: 11111px;
-        border: 1.5px solid #FFFFFF
+        border: 1.5px solid #FFFFFF;
+
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0.006em;
+        text-align: center;
+
       }
 
       &--choosen {
@@ -157,7 +183,7 @@
           }
         }
       }
-    }
+      }
 
     &--single-select-image {
       flex-direction: row;
@@ -167,33 +193,18 @@
     &.grid {
       display: grid;
       grid-template-columns: repeat(12, 30px);
-      gap: 0;
+      gap: 5px;
       grid-template-rows: repeat(7, 30px);
     
       justify-items: center;
       justify-content: center;
-    
-      @for $start from 1 through 12 {
-        @for $end from 1 through 12 {
-          &__column--#{$start}-#{$end} {
-            grid-column: #{$start} / #{$end+1};
-          }
-        }
-      }
-    
-      @for $start from 1 through 7 {
-        @for $end from 1 through 7 {
-          &__row--#{$start}-#{$end} {
-            grid-row: #{$start} / #{$end+1};
-          }
-        }
-      }
     }
   }
 
   &__button {
     display: flex;
     margin-top: 30px;
+    margin: 30px auto 0 auto;
     text-decoration: none;
     background-color: #E4229C;
     justify-content: center;
@@ -248,4 +259,8 @@
     color: #ECECFB;
     text-decoration-color: #ECECFB;
   }
+}
+
+.warning {
+  color: #ff0000;
 }
