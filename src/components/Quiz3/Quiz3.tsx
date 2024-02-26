@@ -2,13 +2,19 @@
 import { Link } from 'react-router-dom';
 import { Header } from '../Header/index.tsx';
 import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { LangContext, LangContextType } from '../../LangContext.tsx';
+import { configuration } from '../../configuration.tsx';
 
 export const Quiz3:React.FC = () => {
   const { data, setData } = useContext<DataContextType>(DataContext);
+  const { lang } = useContext<LangContextType>(LangContext);
+  const langData = configuration[lang];
+  const quiz3 = langData.quiz3;
+  const { title, options } = quiz3;
   const handleClick = (age: string) => {
     setData([...data, {
       order: 3,
-      title: 'What is your age?',
+      title,
       type: 'single-select',
       answer: age,
     }]);
@@ -16,39 +22,39 @@ export const Quiz3:React.FC = () => {
   return (
     <div className="page">
       <Header index={3} isPrevButton={true} />
-      <h1 className="page__title">What is your age?</h1>
+      <h1 className="page__title">{title}</h1>
 
       <div className="page__options">
         <Link
           className='page__options__item page__options__item--single-select'
           to={`../${4}`}
-          onClick={() => handleClick('18-29 years')}
+          onClick={() => handleClick(options[0])}
         >
-          18-29 years
+          {options[0]}
         </Link>
 
         <Link
           className='page__options__item page__options__item--single-select'
           to={`../${4}`}
-          onClick={() => handleClick('30-39 years')}
+          onClick={() => handleClick(options[1])}
         >
-          30-39 years
+          {options[1]}
         </Link>
 
         <Link
           className='page__options__item page__options__item--single-select'
           to={`../${4}`}
-          onClick={() => handleClick('40-49 years')}
+          onClick={() => handleClick(options[2])}
         >
-          40-49 years
+          {options[2]}
         </Link>
 
         <Link
           className='page__options__item page__options__item--single-select'
           to={`../${4}`}
-          onClick={() => handleClick('50+')}
+          onClick={() => handleClick(options[3])}
         >
-          50+
+          {options[3]}
         </Link>
       </div>
     </div>

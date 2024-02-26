@@ -73,11 +73,20 @@
     outline: solid 0px;
 
     &:focus, &:autofill {
+      -webkit-box-shadow: 0 0 0px 1000px #36173D inset !important;
       padding: 20px 40px;
-      background-color: #36173D;
+      background-color: #36173D; 
       box-shadow: none;
       border-width: 2px;
       border-color: #E4229C;
+
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      -webkit-text-fill-color: #FFFFFF;
     }
 
     &:valid + .warning {
@@ -193,7 +202,7 @@
     &.grid {
       display: grid;
       grid-template-columns: repeat(12, 30px);
-      gap: 5px;
+      gap: 1px;
       grid-template-rows: repeat(7, 30px);
     
       justify-items: center;
@@ -229,6 +238,14 @@
       opacity: 0.4;
       pointer-events: none;
     }
+
+    &--email {
+      margin-top: 250px;
+    }
+  }
+
+  &--email {
+    margin-top: 90px;
   }
 
   &--res {
@@ -262,5 +279,6 @@
 }
 
 .warning {
+  margin-top: 20px;
   color: #ff0000;
 }

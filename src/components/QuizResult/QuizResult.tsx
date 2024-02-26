@@ -4,9 +4,16 @@ import checkmark from '../../images/checkmark.png'
 import { Link } from 'react-router-dom';
 import { CSVLink } from "react-csv";
 import download from '../../images/download.svg'
+import { LangContext, LangContextType } from '../../LangContext.tsx';
+import { configuration } from '../../configuration.tsx';
 
 export const QuizResult:React.FC = () => {
   const { data, setData  } = useContext<DataContextType>(DataContext);
+
+  const { lang } = useContext<LangContextType>(LangContext);
+  const langData = configuration[lang];
+  const quizResult = langData.quizResult;
+  const { title: resTitle, subTitle, text, button } = quizResult;
 
   const handleNextClick = () => {
     setData([]);
@@ -23,20 +30,20 @@ export const QuizResult:React.FC = () => {
   ];
   return (
     <div className="page page--res">
-      <h1 className="page__title page__title--res">Thank you</h1>
-      <h2 className="page__sub-title page__sub-title--res">for supporting us and passing quiz</h2>
+      <h1 className="page__title page__title--res">{resTitle}</h1>
+      <h2 className="page__sub-title page__sub-title--res">{subTitle}</h2>
       <img src={checkmark} alt="checkmark" />
       <CSVLink className="download downloadbtn" filename="my-file.csv" data={csvData}>
         <img className="download__img" src={download} alt="download" />
-        <span className="download__text" >Download my answers</span>
+        <span className="download__text">{text}</span>
       </CSVLink>
 
       <Link
         className='page__button'
-        to={`../1`}
+        to={`../quiz/1`}
         onClick={handleNextClick}
       >
-        Retake quiz
+        {button}
       </Link>
     </div>
   );

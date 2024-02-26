@@ -9,20 +9,21 @@ import { configuration } from '../../configuration.tsx';
 export const Quiz1:React.FC = () => {
   const { data, setData } = useContext<DataContextType>(DataContext);
   const { lang, setLang } = useContext<LangContextType>(LangContext);
+  const langData = configuration[lang];
+  const quiz1 = langData.quiz1;
+  const { title, subTitle, options } = quiz1;
+
   const handleClick = (language: Lang) => {
-    if (language.localeCompare('English') !== 0) {
+    if (language.localeCompare(lang) !== 0) {
       setLang(language);
     }
     setData([...data, {
       order: 1,
-      title: 'What is your preferred language?',
+      title,
       type: 'single-select',
-      answer: lang,
+      answer: language,
     }]);
   };
-
-  const quiz1 = configuration[lang];
-  const { title, subTitle, options } = quiz1;
 
   return (
     <div className="page">

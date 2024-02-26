@@ -23,7 +23,7 @@ export const Header:React.FC<Props> = ({index = 1, isPrevButton}) => {
         </NavLink>
         <div className="header__nav__menu"></div>
       </nav>
-      <p className="header__progress-num">{`${index} /5`}</p>
+      <p className="header__progress-num"><span className="header__progress-num--strong">{index}</span>/5</p>
       <div 
         className={classnames(
           'header__progress-bar',
