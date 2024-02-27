@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Header } from '../Header/index.tsx';
-import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { Header } from '../Header';
+import { DataContextType, DataContext } from '../../DataContext';
 import classNames from 'classnames';
 
 import wolf from '../../images/wolf.png';
@@ -11,8 +11,8 @@ import women from '../../images/women.png';
 import crown from '../../images/crown.png';
 import hat from '../../images/hat.png';
 import money from '../../images/money.png';
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 export const Quiz5:React.FC = () => {
   const [topics, setTopics] = useState<string[]>([]);
@@ -37,7 +37,7 @@ export const Quiz5:React.FC = () => {
   const langData = configuration[lang];
   const quiz5 = langData.quiz5;
   const { title, subTitle, options, button } = quiz5;
-  let bubbleOptions;
+  let bubbleOptions = ['', '', '', ''];
 
   const ageData = data.find(el => el.order === 3);
 

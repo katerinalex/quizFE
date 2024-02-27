@@ -1,1 +1,1 @@
-export * from './Quiz4.tsx';
+export * from './Quiz4';

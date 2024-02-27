@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Header } from '../Header/index.tsx';
-import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { Header } from '../Header';
+import { DataContextType, DataContext } from '../../DataContext';
 import classNames from 'classnames';
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 export const Quiz4:React.FC = () => {
   const [hates, setHates] = useState<string[]>([]);

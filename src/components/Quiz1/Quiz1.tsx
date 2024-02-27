@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { Header } from '../Header/index.tsx';
+import { Header } from '../Header';
 import { Link } from 'react-router-dom';
-import { DataContextType, DataContext } from '../../DataContext.tsx';
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { Lang } from '../../types/Lang.ts';
-import { configuration } from '../../configuration.tsx';
+import { DataContextType, DataContext } from '../../DataContext';
+import { LangContext, LangContextType } from '../../LangContext';
+import { Lang } from '../../types/Lang';
+import { configuration } from '../../configuration';
 
 export const Quiz1:React.FC = () => {
   const { data, setData } = useContext<DataContextType>(DataContext);

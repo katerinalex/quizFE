@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import './QuizLoading.scss'
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 export const QuizLoading:React.FC = () => {
   const [persent, setPersent] = useState(0);

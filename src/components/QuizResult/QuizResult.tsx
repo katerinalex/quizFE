@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { DataContextType, DataContext } from '../../DataContext';
 import checkmark from '../../images/checkmark.png'
 import { Link } from 'react-router-dom';
 import { CSVLink } from "react-csv";
 import download from '../../images/download.svg'
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 export const QuizResult:React.FC = () => {
   const { data, setData  } = useContext<DataContextType>(DataContext);

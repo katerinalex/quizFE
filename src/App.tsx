@@ -1,19 +1,19 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import { Quiz1 } from './components/Quiz1/index.tsx';
-import { Quiz2 } from './components/Quiz2/index.tsx';
-import { Quiz3 } from './components/Quiz3/index.tsx';
-import { Quiz4 } from './components/Quiz4/index.tsx';
-import { Quiz5 } from './components/Quiz5/index.tsx';
-import { QuizLoading } from './components/QuizLoading/index.tsx';
-import { QuizEmail } from './components/QuizEmail/index.tsx';
-import { QuizResult } from './components/QuizResult/index.tsx';
-import { useLocalDataStorage, useLocalLangStorage } from './useLocalStorage.ts'
+import { Quiz1 } from './components/Quiz1';
+import { Quiz2 } from './components/Quiz2';
+import { Quiz3 } from './components/Quiz3';
+import { Quiz4 } from './components/Quiz4';
+import { Quiz5 } from './components/Quiz5';
+import { QuizLoading } from './components/QuizLoading';
+import { QuizEmail } from './components/QuizEmail';
+import { QuizResult } from './components/QuizResult';
+import { useLocalDataStorage, useLocalLangStorage } from './useLocalStorage'
+import { DataContext } from './DataContext';
+import { LangContext } from './LangContext';
 
 import './App.scss';
-import { DataContext } from './DataContext.tsx';
-import { LangContext } from './LangContext.tsx';
 
 export const App = () => {
   const [data, setData] = useLocalDataStorage('data', []);

@@ -1,1 +1,1 @@
-export * from './QuizEmail.tsx';
+export * from './QuizEmail';

@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { Header } from '../Header/index.tsx';
+import { Header } from '../Header';
 import { Link } from 'react-router-dom';
-import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { DataContextType, DataContext } from '../../DataContext';
 
 import female from '../../images/female.png';
 import male from '../../images/male.png';
 import other from '../../images/other.png';
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 export const Quiz2:React.FC = () => {
   const { data, setData } = useContext<DataContextType>(DataContext);

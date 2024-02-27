@@ -1,4 +1,4 @@
-import { Lang } from './types/Lang.ts';
+import { Lang } from './types/Lang';
 
 const langOptions: Lang[] = ['English', 'French', 'German', 'Spanish'];
 

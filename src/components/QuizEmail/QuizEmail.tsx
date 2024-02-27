@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { QuizLoading} from '../QuizLoading/index.tsx'
-import { DataContextType, DataContext } from '../../DataContext.tsx';
+import { QuizLoading} from '../QuizLoading'
+import { DataContextType, DataContext } from '../../DataContext';
 import classNames from 'classnames';
-import { LangContext, LangContextType } from '../../LangContext.tsx';
-import { configuration } from '../../configuration.tsx';
+import { LangContext, LangContextType } from '../../LangContext';
+import { configuration } from '../../configuration';
 
 
 export const QuizEmail:React.FC = () => {
